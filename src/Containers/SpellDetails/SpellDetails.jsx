@@ -36,8 +36,6 @@ const SpellDetails = () => {
         <div className={style.CardDetailsMain}>
           <div className={style.CardDetails}>
             <p>Name: {storageInfo.name}</p>
-            <p>Description: {storageInfo.desc}</p>
-            {storageInfo.higher_level && <p>Higher Level: {storageInfo.higher_level}</p>}
             {storageInfo.range && <p>Range: {storageInfo.range}</p>}
             <p>Components: {storageInfo.components.join(', ')}</p>
             {storageInfo.material && <p>Material: {storageInfo.material}</p>}
@@ -49,6 +47,8 @@ const SpellDetails = () => {
             {storageInfo.subclasses && (
               <p>Sub Classes Name: {storageInfo.subclasses.map((cla) => cla.name).join(', ')}</p>
             )}
+            <p>Description: {storageInfo.desc}</p>
+            {storageInfo.higher_level && <p>Higher Level: {storageInfo.higher_level}</p>}
           </div>
           <ButtonDefault
             name={'Voltar'}

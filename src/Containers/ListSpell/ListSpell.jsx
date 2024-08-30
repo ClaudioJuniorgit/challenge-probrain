@@ -10,14 +10,11 @@ const ListSpell = () => {
   const [showContent, setShowContent] = useState(resContext);
   const observer = useRef();
 
-  console.log(resContext);
-  console.log(inputText);
   useEffect(() => {
     setSpellFiltered(
       resContext && resContext.filter((res) => res.name.toLowerCase().includes(inputText.toLowerCase())),
     );
   }, [inputText, resContext]);
-  console.log(spellFiltered);
 
   const lastCardRef = useCallback(
     (node) => {
@@ -31,19 +28,14 @@ const ListSpell = () => {
     },
     [visibleCards, resContext],
   );
-  console.log(visibleCards);
 
   useEffect(() => {
     if (inputText.length > 0) {
       setShowContent(spellFiltered);
-      console.log('entrou no spellfiltered');
     } else {
       setShowContent(visibleCards);
-      console.log('entrou no visible cards');
     }
   }, [spellFiltered, visibleCards]);
-
-  console.log(showContent);
 
   return (
     <div className={style.ListSpell}>

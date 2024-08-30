@@ -1,6 +1,7 @@
 import { createContext, useCallback, useRef, useState } from 'react';
 import { useEffect, useContext } from 'react';
 import axios from 'axios';
+import useAxios from '../Components/Hooks/useAxios';
 
 export const SpellContext = createContext({});
 
@@ -9,17 +10,14 @@ const SpellProvider = ({ children }) => {
   const [spellSelected, setSpellSelected] = useState(null);
   const [inputText, setInputText] = useState('');
   const [visibleCards, setVisibleCards] = useState([]);
+  const { response, loading, error, fetchData } = useAxios();
 
   useEffect(() => {
-    axios
-      .get('https://www.dnd5eapi.co/api/spells')
-      .then((res) => {
-        setResContext(res.data.results);
-        setVisibleCards(res.data.results.slice(0, 1));
-      })
-      .catch((err) => [console.log(err)]);
+    fetchData('https://www.dnd5eapi.co/api/spells', (data) => {
+      setResContext(data.results);
+      setVisibleCards(data.results.slice(0, 1));
+    });
   }, []);
-  console.log(visibleCards);
 
   return (
     <SpellContext.Provider
