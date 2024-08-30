@@ -1,0 +1,16 @@
+.InputFilterMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  border-bottom: 1px solid #d4d4d4;
+  position: fixed;
+  background-color: pink;
+  z-index: 2;
+
+  .InputFilter {
+    border-radius: 8px;
+    font-size: 18px;
+  }
+}
