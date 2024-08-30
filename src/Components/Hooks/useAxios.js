@@ -1,27 +1,16 @@
 import axios from 'axios';
-import { useState } from 'react';
 
 const useAxios = () => {
-  const [response, setResponse] = useState(null);
-  const [loading, setLoading] = useState(null);
-  const [error, setError] = useState(null);
-  const fetchData = async (url, onSuccess) => {
+  const fetchData = async (url, data, err) => {
     try {
-      setLoading(true);
       const result = await axios.get(url);
-      setResponse(result.data);
-      if (onSuccess) onSuccess(result.data);
+      if (data) data(result.data);
     } catch (error) {
-      setError(error);
-    } finally {
-      setLoading(false);
+      err(error);
     }
   };
 
   return {
-    response,
-    loading,
-    error,
     fetchData,
   };
 };

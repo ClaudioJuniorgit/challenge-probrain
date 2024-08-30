@@ -1,15 +1,15 @@
-import axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
 import { SpellContext } from '../../Contexts/Context';
 import { useLocation, useNavigate } from 'react-router-dom';
 import style from './SpellDetails.module.scss';
 import ButtonDefault from '../../Components/UI/ButtonDefault/ButtonDefault';
+import useAxios from '../../Components/Hooks/useAxios';
 
 const SpellDetails = () => {
   const navigate = useNavigate();
   const { spellSelected } = useContext(SpellContext);
   const [storageInfo, setStorageInfo] = useState();
-  const location = useLocation();
+  const { fetchData } = useAxios();
   const useQuery = () => {
     return new URLSearchParams(useLocation().search);
   };
@@ -17,17 +17,11 @@ const SpellDetails = () => {
   console.log(query.get('magic'));
 
   useEffect(() => {
-    console.log(location.use);
     if (spellSelected || query.get('magic'))
-      axios
-        .get(`https://www.dnd5eapi.co${spellSelected || `/api/spells/${query.get('magic')}`}`)
-        .then((res) => {
-          localStorage.setItem('infoSpell', JSON.stringify(res.data));
-          setStorageInfo(JSON.parse(localStorage.getItem('infoSpell')));
-        })
-        .catch((err) => [console.log(err)]);
-
-    console.log('SpellInfo', storageInfo);
+      fetchData(`https://www.dnd5eapi.co${spellSelected || `/api/spells/${query.get('magic')}`}`, (data) => {
+        localStorage.setItem('infoSpell', JSON.stringify(data));
+        setStorageInfo(JSON.parse(localStorage.getItem('infoSpell')));
+      });
   }, []);
 
   return (

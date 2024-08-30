@@ -1,6 +1,6 @@
 .InputFilterMain {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   height: 200px;
@@ -10,7 +10,16 @@
   z-index: 2;
 
   .InputFilter {
-    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
     font-size: 18px;
+    width: 413px;
+    height: 70px;
+    top: 40px;
+    left: 1187px;
+    gap: 40px;
+    padding: 0px 20px;
+    background-color: #363636;
+    border-radius: 10px;
   }
 }
