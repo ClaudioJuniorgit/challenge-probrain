@@ -3,6 +3,7 @@ import { SpellContext } from '../../Contexts/Context';
 import Card from '../../Components/Card/Card';
 import style from './ListSpell.module.scss';
 import Header from '../../Components/Header/Header';
+import BgImage from '../../assets/backgroundWPP.svg';
 
 const ListSpell = () => {
   const { resContext, setInputText, inputText, visibleCards, setVisibleCards } = useContext(SpellContext);
@@ -38,17 +39,26 @@ const ListSpell = () => {
   }, [spellFiltered, visibleCards]);
 
   return (
-    <div className={style.ListSpell}>
+    <div>
       <Header />
-      <div className={style.Cards}>
-        {showContent &&
-          showContent.map((res, index) => {
-            if (index === showContent.length - 1) {
-              return <Card lastCardRef={lastCardRef} res={res} key={index} index={index} />;
-            } else {
-              return <Card res={res} key={index} index={index} />;
-            }
-          })}
+      <div className={style.ListSpell}>
+        <div className={style.BgText}>
+          <h1>Conheça as magias do Dungeons and Dragons</h1>
+        </div>
+        <img src={BgImage} alt="" />
+      </div>
+      <div className={style.CardTemplate}>
+        <h1>Explore as Magias</h1>
+        <div className={style.Cards}>
+          {showContent &&
+            showContent.map((res, index) => {
+              if (index === showContent.length - 1) {
+                return <Card lastCardRef={lastCardRef} res={res} key={index} index={index} />;
+              } else {
+                return <Card res={res} key={index} index={index} />;
+              }
+            })}
+        </div>
       </div>
     </div>
   );

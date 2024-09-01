@@ -45,7 +45,7 @@ const SpellDetails = () => {
             {storageInfo.higher_level && <p>Higher Level: {storageInfo.higher_level}</p>}
           </div>
           <ButtonDefault
-            name={'Voltar'}
+            name={'VOLTAR '}
             onClick={() => {
               navigate('/');
               localStorage.setItem('infoSpell', '');

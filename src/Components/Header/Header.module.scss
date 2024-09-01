@@ -1,25 +1,46 @@
-.InputFilterMain {
+.HeaderMain {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 200px;
-  border-bottom: 1px solid #d4d4d4;
+  height: 100px;
+  padding: 8px 16px;
   position: fixed;
-  background-color: #fff;
+  background-color: #323232;
+  backdrop-filter: blur(10px);
+  opacity: 0.7;
   z-index: 2;
 
-  .InputFilter {
+  .HeaderLogo {
+    width: 305px;
+  }
+
+  .InputFilterMain {
     display: flex;
-    justify-content: space-between;
     font-size: 18px;
     width: 413px;
     height: 70px;
-    top: 40px;
-    left: 1187px;
-    gap: 40px;
-    padding: 0px 20px;
+    padding: 0px 40px;
     background-color: #363636;
     border-radius: 10px;
   }
+
+  .InputFilter {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    flex: 1;
+  }
+
+  .SearchImage {
+    color: #aaa;
+    width: 20px;
+  }
+}
+
+.BgImage {
+  background-size: cover;
+  width: 1900px;
 }

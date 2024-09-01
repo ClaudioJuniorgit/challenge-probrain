@@ -3,7 +3,7 @@ import { useEffect, useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SpellContext } from '../../Contexts/Context';
 import style from './Card.module.scss';
-import dndLogo from '../../assets/dndLogo.png';
+import dndLogo from '../../assets/dndLogo.svg';
 import ButtonDefault from '../UI/ButtonDefault/ButtonDefault';
 
 const Card = ({ res, index, lastCardRef }) => {
@@ -12,12 +12,12 @@ const Card = ({ res, index, lastCardRef }) => {
 
   return (
     <div className={style.CardMain} ref={lastCardRef} key={index}>
-      <img className={style.ImageCard} src={dndLogo} alt="DnDLogo" />
+      <h3>DUNGEONS AND DRAGONS</h3>
 
       <div className={style.TextCard}>{res.name}</div>
 
       <ButtonDefault
-        name={'Detalhes'}
+        name={'VER DETALHES '}
         onClick={() => {
           navigate(`/listspell/details?magic=${res.index}`);
           setSpellSelected(res.url);
