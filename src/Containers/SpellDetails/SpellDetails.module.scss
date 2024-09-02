@@ -1,11 +1,154 @@
-.CardDetailsMain {
-  display: flex;
-  flex-direction: column;
-  padding: 50px 30px;
-  row-gap: 10px;
+// .DetailsMain {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
 
-  .CardDetails {
-    border: 1px solid #d4d4d4;
-    padding: 20px;
+//   .BgBottom {
+//     width: 100vw;
+//     height: 100vh;
+//     object-fit: cover;
+//     overflow: hidden;
+//   }
+
+//   .DetailsBox {
+//     position: fixed;
+//     width: 45vw;
+//     max-height: 85vh;
+//     // padding-bottom: 10px;
+//     border-radius: 28px;
+//     // text-align: center;
+//     background-color: #fff5e7;
+
+//     .BgDetails {
+//       display: flex;
+//       color: #ffffff;
+//       align-items: center;
+//       justify-content: center;
+
+//       .BgDetailsImg {
+//         width: 100%;
+//         overflow: hidden;
+//       }
+
+//       .BgTitle {
+//         position: fixed;
+//         font-family: DM Serif Display;
+//         font-size: 62px;
+//         font-weight: 400;
+//       }
+//     }
+
+//     .CardDetailsBox {
+//       padding: 50px 40px;
+//       display: flex;
+//       flex-direction: column;
+//       gap: 40px;
+//       .CardDetails {
+//         // display: grid;
+//         // grid-template-columns: repeat(3, 1fr);
+//         // width: 100%;
+//         // gap: 30px;
+//         display: flex;
+//         flex-wrap: wrap;
+//         gap: 30px;
+//       }
+//     }
+//   }
+// }
+
+.DetailsMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .BgBottom {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .DetailsBox {
+    position: fixed;
+    width: 80vw;
+    max-height: 85vh;
+    // padding-bottom: 10px;
+    border-radius: 28px;
+    // text-align: center;
+    background-color: #fff5e7;
+
+    .BgDetails {
+      display: flex;
+      color: #ffffff;
+      align-items: center;
+      justify-content: center;
+
+      .BgDetailsImg {
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .BgTitle {
+        position: fixed;
+        font-family: DM Serif Display;
+        font-size: 62px;
+        font-weight: 400;
+      }
+    }
+
+    .CardDetailsBox {
+      padding: 50px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      .CardDetails {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        @media (min-width: 768px) {
+          display: grid;
+          grid-template-columns: 3fr;
+          grid-template-rows: 80px 80px 80px;
+          width: 100%;
+          gap: 20px;
+          grid-template-areas:
+            'Range Components Material'
+            'Duration School AttackType'
+            'CastingTime Class SubClass'
+            'Description Description Description';
+
+          .Range {
+            grid-area: Range;
+          }
+          .Components {
+            grid-area: Components;
+          }
+          .Material {
+            grid-area: Material;
+          }
+          .Duration {
+            grid-area: Duration;
+          }
+          .CastingTime {
+            grid-area: CastingTime;
+          }
+          .AttackType {
+            grid-area: AttackType;
+          }
+          .School {
+            grid-area: School;
+          }
+          .Class {
+            grid-area: Class;
+          }
+          .SubClass {
+            grid-area: SubClass;
+          }
+          .Description {
+            grid-area: Description;
+          }
+        }
+      }
+    }
   }
 }

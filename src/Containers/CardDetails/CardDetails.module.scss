@@ -1,0 +1,72 @@
+.CardDetails {
+  // display: flex;
+  flex: 1 1 calc(33.33% - 20px);
+  box-sizing: border-box;
+  flex-direction: column;
+  background-color: #ffffff;
+  // width: 20%;
+  border-radius: 10px;
+  border: 1px solid #ffa800;
+  padding: 10px 15px;
+  gap: 20px;
+
+  .CardBox {
+    display: flex;
+    justify-content: left;
+    gap: 15%;
+    align-items: center;
+    width: 100%;
+  }
+
+  .CardImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 15px;
+    background-color: #ffa800;
+  }
+
+  .CardImg img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .CardText {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 5px;
+
+    .MediumTextSize {
+      font-size: 12px;
+    }
+
+    .HighTextSize {
+      font-size: 11px;
+    }
+  }
+
+  .CardTitle {
+    font-weight: 600;
+    font-size: 20px;
+  }
+}
+.OnlyText {
+  // width: 50%;
+  text-align: justify;
+  .CardTitle {
+    font-weight: 600;
+    font-size: 20px;
+  }
+}
+
+// .LongText {
+//   width: 91%;
+//   grid-column: span 2;
+//   font-size: 5px;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 10px;
+//   text-align: left;
+// }

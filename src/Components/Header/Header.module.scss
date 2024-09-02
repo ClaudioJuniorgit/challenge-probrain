@@ -12,7 +12,7 @@
   z-index: 2;
 
   .HeaderLogo {
-    width: 305px;
+    display: none;
   }
 
   .InputFilterMain {
@@ -37,6 +37,12 @@
   .SearchImage {
     color: #aaa;
     width: 20px;
+  }
+  @media (min-width: 768px) {
+    .HeaderLogo {
+      display: flex;
+      width: 305px;
+    }
   }
 }
 

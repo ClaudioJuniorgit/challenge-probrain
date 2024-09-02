@@ -1,9 +1,8 @@
-import axios from 'axios';
 import { useEffect, useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SpellContext } from '../../Contexts/Context';
 import style from './Card.module.scss';
-import dndLogo from '../../assets/dndLogo.svg';
+import BtnArrow from '../../assets/arrow.svg';
 import ButtonDefault from '../UI/ButtonDefault/ButtonDefault';
 
 const Card = ({ res, index, lastCardRef }) => {

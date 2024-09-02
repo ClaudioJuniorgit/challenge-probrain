@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 40px;
-  width: 25%;
+  width: 70%;
   height: 338px;
   background-color: #fff5e7;
   border: none;
@@ -45,10 +45,7 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
-}
-
-@media (max-width: 768px) {
-  .CardTemplate {
-    padding: 10px;
+  @media (min-width: 1024px) {
+    width: 338px;
   }
 }
